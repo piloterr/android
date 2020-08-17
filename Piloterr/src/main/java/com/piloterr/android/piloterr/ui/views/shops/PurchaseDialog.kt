@@ -228,7 +228,7 @@ class PurchaseDialog(context: Context, component: UserComponent?, val item: Shop
                 limitedTextView.setBackgroundColor(ContextCompat.getColor(context, R.color.green_10))
             }
             val gemContent = additionalContentView as? PurchaseDialogGemsContent
-            gemContent?.stepperView?.maxValue = (user?.purchased?.plan?.numberOfGemsLeft() ?: 1).toDouble()
+            gemContent?.stepperView?.maxValue = (user.purchased?.plan?.numberOfGemsLeft() ?: 1).toDouble()
         }
 
         buyButton.elevation = 0f

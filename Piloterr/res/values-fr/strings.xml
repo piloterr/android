@@ -179,8 +179,8 @@
     <string name="setup_task_creativity_1">Étudier un maître de l\'art</string>
     <string name="setup_task_creativity_2">Travailler sur un projet créatif</string>
     <string name="setup_task_creativity_3">Finir un projet créatif</string>
-    <string name="my_guilds">Mes guildes</string>
-    <string name="public_guilds">Guildes publiques</string>
+    <string name="my_guilds">Mes groupes</string>
+    <string name="public_guilds">Groupes publiques</string>
     <string name="guild">Guilde</string>
     <string name="leave">Quitter</string>
     <string name="join">Rejoindre</string>
@@ -191,7 +191,7 @@
     <string name="add_tag">Ajouter une nouvelle étiquette</string>
     <string name="privacy">Sécurité</string>
     <string name="write_message">Écrire un message</string>
-    <string name="guild_search_hint">Chercher des guildes</string>
+    <string name="guild_search_hint">Chercher des groupes</string>
     <string name="battle_gear">Équipement de combat</string>
     <string name="costume">Costume</string>
     <string name="outfit_head">Tête</string>
@@ -404,7 +404,6 @@
     <string name="none">Aucun</string>
     <string name="owned">Possédé</string>
     <string name="not_owned">Non possédé</string>
-    <string name="login_btn_fb">Se connecter via Facebook</string>
     <string name="login_btn_google">Se connecter via Google</string>
     <string name="action_back">Retour</string>
     <string name="welcome_text">Oh, vous devez débuter. Je m\'appelle Justin et je vais vous guider dans Piloterr.
@@ -827,15 +826,15 @@
     <string name="authentication_error_body">Votre nom d\'utilisateur et/ou mot de passe est incorrect.</string>
     <string name="network_error_no_network_body">Aucune connexion à Internet.</string>
     <string name="copy_userid">Copier l\'identifiant</string>
-    <string name="preference_push_unjoined_guild_mention">\@mentions dans des guildes</string>
-    <string name="preference_push_joined_guild_mention">\@mentions dans vos guildes</string>
+    <string name="preference_push_unjoined_guild_mention">\@mentions dans des groupes</string>
+    <string name="preference_push_joined_guild_mention">\@mentions dans vos groupes</string>
     <string name="gems_to_gift">Gemmes à offrir</string>
     <string name="gift_gems_balance_subtitle">Indiquez ci-dessous combien de vos propres gemmes vous voudriez envoyer, ou changez d\'onglet pour acheter des gemmes à offrir</string>
     <string name="from_balance">Offrir vos propres gemmes</string>
     <string name="purchase">Acheter</string>
     <string name="preference_push_party_mention">\@mentions dans l\'équipe</string>
     <string name="more_out_of_piloterr">Profitez encore plus d\'Piloterr</string>
-    <string name="gift_gems_disclaimer">Piloterr ne vous demandera jamais d\'offrir des gemmes aux autres joueurs. Supplier qu\'on vous donne des gemmes est une violation de nos règles de vie en communauté, et toute fois où cela se produit doit être signalée à admin@piloterr.com.</string>
+    <string name="gift_gems_disclaimer">Piloterr ne vous demandera jamais d\'offrir des gemmes aux autres joueurs. Supplier qu\'on vous donne des gemmes est une violation de nos règles de vie en communauté, et toute fois où cela se produit doit être signalée à hello@piloterr.com.</string>
     <string name="gems_gift_description">Vous voulez octroyer un butin scintillant à quelqu\'un d\'autre \?</string>
     <string name="profile_gift_subscription">Offrir
 \nun abonnement</string>

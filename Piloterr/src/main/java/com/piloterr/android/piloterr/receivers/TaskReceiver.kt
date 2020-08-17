@@ -68,7 +68,7 @@ class TaskReceiver : BroadcastReceiver() {
         val soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
 
         val notificationBuilder = NotificationCompat.Builder(context, "default")
-                .setSmallIcon(R.drawable.ic_gryphon_white)
+                .setSmallIcon(R.drawable.ic_earth_white)
                 .setContentTitle(task.text)
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setSound(soundUri)

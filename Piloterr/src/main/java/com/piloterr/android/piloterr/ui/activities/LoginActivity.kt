@@ -94,7 +94,6 @@ class LoginActivity : BaseActivity(), Consumer<UserAuthResponse> {
     private val mEmail: EditText by bindView(R.id.email)
     private val mConfirmPassword: EditText by bindView(R.id.confirm_password)
     private val forgotPasswordButton: Button by bindView(R.id.forgot_password)
-    private val facebookLoginButton: Button by bindView(R.id.fb_login_button)
     private val googleLoginButton: Button by bindView(R.id.google_login_button)
     private val appleLoginButton: Button by bindView(R.id.apple_login_button)
 
@@ -176,7 +175,6 @@ class LoginActivity : BaseActivity(), Consumer<UserAuthResponse> {
         showLoginButton.setOnClickListener { showLoginButtonClicked() }
         backButton.setOnClickListener { backButtonClicked() }
         forgotPasswordButton.setOnClickListener { onForgotPasswordClicked() }
-        facebookLoginButton.setOnClickListener { handleFacebookLogin() }
         googleLoginButton.setOnClickListener { handleGoogleLogin() }
         appleLoginButton.setOnClickListener {
             val configuration = SignInWithAppleConfiguration(
@@ -272,13 +270,11 @@ class LoginActivity : BaseActivity(), Consumer<UserAuthResponse> {
             this.mLoginNormalBtn.text = getString(R.string.register_btn)
             mUsernameET.setHint(R.string.username)
             mPasswordET.imeOptions = EditorInfo.IME_ACTION_NEXT
-            facebookLoginButton.setText(R.string.register_btn_fb)
             googleLoginButton.setText(R.string.register_btn_google)
         } else {
             this.mLoginNormalBtn.text = getString(R.string.login_btn)
             mUsernameET.setHint(R.string.email_username)
             mPasswordET.imeOptions = EditorInfo.IME_ACTION_DONE
-            facebookLoginButton.setText(R.string.login_btn_fb)
             googleLoginButton.setText(R.string.login_btn_google)
         }
         this.resetLayout()

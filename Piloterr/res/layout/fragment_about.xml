@@ -88,7 +88,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10sp"
             android:autoLink="web"
-            android:text="http://piloterr.wikia.com/"
+            android:text="http://help.piloterr.com/"
             android:textSize="@dimen/card_medium_text" />
 
         <Button

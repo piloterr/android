@@ -1,4 +1,4 @@
-package com.piloterr.android.piloterr.models.inventory;
+package com.piloterr.android.piloterr.models.inventory
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat

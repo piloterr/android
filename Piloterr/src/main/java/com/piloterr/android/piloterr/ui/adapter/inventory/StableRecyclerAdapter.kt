@@ -25,7 +25,7 @@ import io.reactivex.subjects.PublishSubject
 import io.realm.RealmResults
 
 
-class StableRecyclerAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class StableRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var shopSpriteSuffix: String? = null
     private var eggs: Map<String, Egg> = mapOf()

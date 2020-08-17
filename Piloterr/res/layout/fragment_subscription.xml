@@ -62,14 +62,6 @@
             android:layout_height="wrap_content"
             android:padding="20dp">
 
-            <ImageView
-                android:id="@+id/header_image_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/subscribe_header"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="20dp"/>
-
             <com.piloterr.android.piloterr.ui.views.subscriptions.SubscriptionDetailsView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

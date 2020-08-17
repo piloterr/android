@@ -41,8 +41,8 @@ class FAQOverviewFragment : BaseMainFragment() {
         binding.hourglassesSection.findViewById<ImageView>(R.id.icon_view).setImageBitmap(PiloterrIconsHelper.imageOfHourglassLarge())
         binding.statsSection.findViewById<ImageView>(R.id.icon_view).setImageBitmap(PiloterrIconsHelper.imageOfStats())
 
-        binding.moreHelpTextView.setMarkdown(context?.getString(R.string.need_help_header_description, "[Piloterr Help Guild](https://piloterr.com/groups/guild/5481ccf3-5d2d-48a9-a871-70a7380cee5a)"))
-        binding.moreHelpTextView.setOnClickListener { MainNavigationController.navigate(R.id.guildFragment, bundleOf("groupID" to "5481ccf3-5d2d-48a9-a871-70a7380cee5a")) }
+        binding.moreHelpTextView.setMarkdown(context?.getString(R.string.need_help_header_description, "[Piloterr Help Guild](https://piloterr.com/groups/guild/39bed861-f2d6-4f8e-8420-eae83e569281)"))
+        binding.moreHelpTextView.setOnClickListener { MainNavigationController.navigate(R.id.guildFragment, bundleOf("groupID" to "39bed861-f2d6-4f8e-8420-eae83e569281")) }
         binding.moreHelpTextView.movementMethod = LinkMovementMethod.getInstance()
         return binding.root
     }

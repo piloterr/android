@@ -187,7 +187,7 @@ class TasksFragment : BaseMainFragment(), SearchView.OnQueryTextListener {
             })
             dialog.setOnDismissListener {
                 if (disposable?.isDisposed == false) {
-                    disposable?.dispose()
+                    disposable.dispose()
                 }
             }
             dialog.show()

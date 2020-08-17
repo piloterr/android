@@ -120,7 +120,7 @@ class NotificationPublisher : BroadcastReceiver() {
 
         builder.setStyle(NotificationCompat.BigTextStyle().bigText(notificationText))
 
-        builder.setSmallIcon(R.drawable.ic_gryphon_white)
+        builder.setSmallIcon(R.drawable.ic_earth_white)
         val notificationIntent = Intent(thisContext, MainActivity::class.java)
         notificationIntent.putExtra("notificationIdentifier", "daily_reminder")
 

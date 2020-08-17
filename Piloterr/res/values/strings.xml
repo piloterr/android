@@ -214,8 +214,8 @@
     <string name="setup_task_creativity_2">Work on creative project</string>
     <string name="setup_task_creativity_3">Finish creative project</string>
 
-    <string name="my_guilds">My Guilds</string>
-    <string name="public_guilds">Public Guilds</string>
+    <string name="my_guilds">My Groups</string>
+    <string name="public_guilds">Public Groups</string>
     <string name="guild">Guild</string>
     <string name="leave">Leave</string>
     <string name="join">Join</string>
@@ -226,7 +226,7 @@
     <string name="add_tag">Add new Tag</string>
     <string name="privacy">Privacy</string>
     <string name="write_message">Write Message</string>
-    <string name="guild_search_hint">Search for guilds</string>
+    <string name="guild_search_hint">Search for groups</string>
 
     <string name="battle_gear">Battle Gear</string>
     <string name="costume">Costume</string>
@@ -471,7 +471,6 @@
     <string name="none">None</string>
     <string name="owned">Owned</string>
     <string name="not_owned">Not owned</string>
-    <string name="login_btn_fb">Login with Facebook</string>
     <string name="login_btn_google">Login with Google</string>
     <string name="login_btn_apple">Sign in with Apple</string>
     <string name="register_btn_fb">Sign up with Facebook</string>
@@ -896,15 +895,15 @@
     <string name="profile_gift_gems">Gift\nGems</string>
     <string name="profile_gift_subscription">Gift\nSubscription</string>
     <string name="gems_gift_description">Want to bestow a shiny haul of Gems to someone else?</string>
-    <string name="gift_gems_disclaimer">Piloterr will never require you to gift gems to other players. Begging people for gems is a violation of the Community Guidelines and should be reported to admin@piloterr.com.</string>
+    <string name="gift_gems_disclaimer">Piloterr will never require you to gift gems to other players. Begging people for gems is a violation of the Community Guidelines and should be reported to hello@piloterr.com.</string>
     <string name="more_out_of_piloterr">Get more out of Piloterr</string>
     <string name="preference_push_party_mention">\@Mentions in Party</string>
     <string name="purchase">Purchase</string>
     <string name="from_balance">From Balance</string>
     <string name="gift_gems_balance_subtitle">Enter how many of your Gems you\'d like to send below or switch tabs to purchase Gems to gift</string>
     <string name="gems_to_gift">Gems to gift</string>
-    <string name="preference_push_joined_guild_mention">\@Mentions in joined Guilds</string>
-    <string name="preference_push_unjoined_guild_mention">\@Mentions in not joined Guilds</string>
+    <string name="preference_push_joined_guild_mention">\@Mentions in joined Groups</string>
+    <string name="preference_push_unjoined_guild_mention">\@Mentions in not joined Groups</string>
     <string name="send_gift">Send Gift</string>
     <string name="copy_userid">Copy User ID</string>
     <string name="id_copied">Copied User ID to clipboard</string>

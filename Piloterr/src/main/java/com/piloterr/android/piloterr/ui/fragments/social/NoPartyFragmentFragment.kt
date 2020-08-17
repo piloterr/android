@@ -116,10 +116,10 @@ class NoPartyFragmentFragment : BaseMainFragment() {
         }
 
         if (configManager.noPartyLinkPartyGuild()) {
-            join_party_description_textview.setMarkdown(getString(R.string.join_party_description_guild, "[Party Wanted Guild](https://piloterr.com/groups/guild/f2db2a7f-13c5-454d-b3ee-ea1f5089e601)"))
+            join_party_description_textview.setMarkdown(getString(R.string.join_party_description_guild, "[Party Wanted Guild](https://piloterr.com/groups/guild/de4c9929-6bdb-48d1-b1ff-13499fd8b822)"))
             join_party_description_textview.setOnClickListener {
                 context?.let { FirebaseAnalytics.getInstance(it).logEvent("clicked_party_wanted", null) }
-                MainNavigationController.navigate(R.id.guildFragment, bundleOf("groupID" to "f2db2a7f-13c5-454d-b3ee-ea1f5089e601"))
+                MainNavigationController.navigate(R.id.guildFragment, bundleOf("groupID" to "de4c9929-6bdb-48d1-b1ff-13499fd8b822"))
             }
         }
 

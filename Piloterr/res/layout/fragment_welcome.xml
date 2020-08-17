@@ -15,14 +15,6 @@
     android:paddingTop="32dp"
     android:paddingBottom="16dp">
 
-    <ImageView
-        android:layout_width="294dp"
-        android:layout_height="121dp"
-        android:src="@drawable/hello_onboarding"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="@dimen/spacing_large"
-        />
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

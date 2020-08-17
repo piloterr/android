@@ -21,7 +21,7 @@ abstract class PiloterrLocalNotification(protected var context: Context, protect
     protected var message: String? = null
 
     protected var notificationBuilder = NotificationCompat.Builder(context, "default")
-            .setSmallIcon(R.drawable.ic_gryphon_white)
+            .setSmallIcon(R.drawable.ic_earth_white)
             .setAutoCancel(true)
 
     open fun configureNotificationBuilder(data: MutableMap<String, String>): NotificationCompat.Builder {
