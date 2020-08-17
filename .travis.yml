@@ -21,11 +21,11 @@ before_install:
   - if [ $REQUIRES_SERVER = "true" ]; then echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list; fi
   - if [ $REQUIRES_SERVER = "true" ]; then sudo apt-get update || true; fi
   - if [ $REQUIRES_SERVER = "true" ]; then sudo apt-get -y install mongodb; fi
-  - if [ $REQUIRES_SERVER = "true" ]; then git clone https://github.com/HabitRPG/habitica.git; fi
+  - if [ $REQUIRES_SERVER = "true" ]; then git clone https://github.com/Piloterr/piloterr.git; fi
   - if [ $REQUIRES_SERVER = "true" ]; then until nc -z localhost 27017; do echo Waiting for MongoDB; sleep 2; done; fi
-  - if [ $REQUIRES_SERVER = "true" ]; then cd habitica && cp config.json.example config.json && npm install; fi
+  - if [ $REQUIRES_SERVER = "true" ]; then cd piloterr && cp config.json.example config.json && npm install; fi
   - if [ $REQUIRES_SERVER = "true" ]; then npm start; fi &
-  - if [ $REQUIRES_SERVER = "true" ]; then until nc -z localhost 3000; do echo Waiting for Habitica Server; sleep 2; done; fi
+  - if [ $REQUIRES_SERVER = "true" ]; then until nc -z localhost 3000; do echo Waiting for Piloterr Server; sleep 2; done; fi
   - if [ $REQUIRES_SERVER = "true" ]; then cd -; fi
 android:
   components:
@@ -54,9 +54,9 @@ android:
     - 'android-sdk-license-.+'
     - 'google-gdk-license-.+'
 before_script:
-  - cp habitica.properties.travis habitica.properties
-  - cp habitica.resources.example habitica.resources
-  - cp Habitica/google-services.json.example Habitica/google-services.json
+  - cp piloterr.properties.travis piloterr.properties
+  - cp piloterr.resources.example piloterr.resources
+  - cp Piloterr/google-services.json.example Piloterr/google-services.json
 script:
   - ./gradlew $TEST2
 env:

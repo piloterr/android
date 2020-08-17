@@ -20,7 +20,7 @@ If applicable, add screenshots or video to help show the problem
  - Device: [e.g. Moto G5]
  - OS: [e.g. Android 9]
  - App Version: [e.g. 2.2]
- - Habitica Username: 
+ - Piloterr Username:
 
 **Additional context**
 Add any other context about the problem here.

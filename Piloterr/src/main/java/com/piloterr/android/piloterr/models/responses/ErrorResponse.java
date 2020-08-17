@@ -1,0 +1,21 @@
+package com.piloterr.android.piloterr.models.responses;
+
+import java.util.List;
+
+public class ErrorResponse {
+    public String message;
+    public List<PiloterrError> errors;
+
+    public String getDisplayMessage() {
+        if (errors != null && errors.size() > 0) {
+            PiloterrError error = errors.get(0);
+            if (error.message != null && error.message.length() > 0) {
+                return error.message;
+            }
+        }
+        if (message != null && message.length() > 0) {
+            return message;
+        }
+        return "";
+    }
+}

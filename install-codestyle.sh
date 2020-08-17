@@ -21,4 +21,4 @@ done
 
 echo "Done."
 echo ""
-echo "Restart IntelliJ and/or AndroidStudio, go to preferences, and apply 'HabiticaAndroidStyle'."
+echo "Restart IntelliJ and/or AndroidStudio, go to preferences, and apply 'PiloterrAndroidStyle'."

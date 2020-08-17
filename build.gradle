@@ -32,7 +32,7 @@ allprojects {
 }
 
 detekt {
-    input = files("Habitica/src/main/java")
+    input = files("Piloterr/src/main/java")
     config = files("detekt.yml")
     reports {
         xml {

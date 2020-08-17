@@ -1,0 +1,280 @@
+package com.piloterr.android.piloterr.ui.adapter
+
+import android.content.Context
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.core.os.bundleOf
+import com.facebook.drawee.view.SimpleDraweeView
+import com.piloterr.android.piloterr.R
+import com.piloterr.android.piloterr.databinding.CustomizationGridItemBinding
+import com.piloterr.android.piloterr.databinding.CustomizationSectionHeaderBinding
+import com.piloterr.android.piloterr.helpers.MainNavigationController
+import com.piloterr.android.piloterr.models.inventory.Customization
+import com.piloterr.android.piloterr.models.inventory.CustomizationSet
+import com.piloterr.android.piloterr.ui.helpers.DataBindingUtils
+import com.piloterr.android.piloterr.ui.helpers.bindView
+import com.piloterr.android.piloterr.ui.views.PiloterrIconsHelper
+import com.piloterr.android.piloterr.ui.views.dialogs.PiloterrAlertDialog
+import io.reactivex.BackpressureStrategy
+import io.reactivex.Flowable
+import io.reactivex.subjects.PublishSubject
+import java.util.*
+
+class CustomizationRecyclerViewAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
+
+    var userSize: String? = null
+    var hairColor: String? = null
+    var gemBalance: Int = 0
+    var unsortedCustomizations: List<Customization> = ArrayList()
+    var customizationList: MutableList<Any> = ArrayList()
+    set(value) {
+        field = value
+        notifyDataSetChanged()
+    }
+    var additionalSetItems: List<Customization> = ArrayList()
+    var activeCustomization: String? = null
+    set(value) {
+        field = value
+        this.notifyDataSetChanged()
+    }
+
+    var ownedCustomiztations: List<String> = listOf()
+
+    private val selectCustomizationEvents = PublishSubject.create<Customization>()
+    private val unlockCustomizationEvents = PublishSubject.create<Customization>()
+    private val unlockSetEvents = PublishSubject.create<CustomizationSet>()
+
+    fun updateOwnership(ownedCustomizations: List<String>) {
+        this.ownedCustomiztations = ownedCustomizations
+        setCustomizations(unsortedCustomizations)
+        notifyDataSetChanged()
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
+        return if (viewType == 0) {
+            val view = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.customization_section_header, parent, false)
+            SectionViewHolder(view)
+        } else {
+            val viewID: Int = R.layout.customization_grid_item
+
+            val view = LayoutInflater.from(parent.context).inflate(viewID, parent, false)
+            CustomizationViewHolder(view)
+        }
+
+    }
+
+    override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
+        val obj = customizationList[position]
+        if (obj.javaClass == CustomizationSet::class.java) {
+            (holder as SectionViewHolder).bind(obj as CustomizationSet)
+        } else {
+            (holder as CustomizationViewHolder).bind(customizationList[position] as Customization)
+
+        }
+    }
+
+    override fun getItemCount(): Int {
+        return customizationList.size
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return if (this.customizationList[position].javaClass == CustomizationSet::class.java) {
+            0
+        } else {
+            1
+        }
+    }
+
+    fun setCustomizations(newCustomizationList: List<Customization>) {
+        unsortedCustomizations = newCustomizationList
+        this.customizationList = ArrayList()
+        var lastSet = CustomizationSet()
+        val today = Date()
+        for (customization in newCustomizationList.reversed()) {
+            if (customization.availableFrom != null || customization.availableUntil != null) {
+                if ((customization.availableFrom?.compareTo(today) ?: 0 > 0 || customization.availableUntil?.compareTo(today) ?: 0 < 0) && !customization.isUsable(ownedCustomiztations.contains(customization.identifier))) {
+                    continue
+                }
+            }
+            if (customization.customizationSet != null && customization.customizationSet != lastSet.identifier) {
+                val set = CustomizationSet()
+                set.identifier = customization.customizationSet
+                set.text = customization.customizationSetName
+                set.price = customization.setPrice
+                set.hasPurchasable = !customization.isUsable(ownedCustomiztations.contains(customization.identifier))
+                lastSet = set
+                customizationList.add(set)
+            }
+            customizationList.add(customization)
+            if (!customization.isUsable(ownedCustomiztations.contains(customization.identifier)) && !lastSet.hasPurchasable) {
+                lastSet.hasPurchasable = true
+            }
+        }
+        this.notifyDataSetChanged()
+    }
+
+    fun getSelectCustomizationEvents(): Flowable<Customization> {
+        return selectCustomizationEvents.toFlowable(BackpressureStrategy.DROP)
+    }
+
+    fun getUnlockCustomizationEvents(): Flowable<Customization> {
+        return unlockCustomizationEvents.toFlowable(BackpressureStrategy.DROP)
+    }
+
+    fun getUnlockSetEvents(): Flowable<CustomizationSet> {
+        return unlockSetEvents.toFlowable(BackpressureStrategy.DROP)
+    }
+
+    internal inner class CustomizationViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView), View.OnClickListener {
+
+        private val binding = CustomizationGridItemBinding.bind(itemView)
+        var customization: Customization? = null
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        fun bind(customization: Customization) {
+            this.customization = customization
+
+            DataBindingUtils.loadImage(binding.imageView, customization.getIconName(userSize, hairColor))
+
+            if (customization.type == "background") {
+                val params = (binding.imageView.layoutParams as? LinearLayout.LayoutParams)?.apply {
+                    gravity = Gravity.CENTER
+                }
+                binding.imageView.layoutParams = params
+            }
+
+            if (customization.isUsable(ownedCustomiztations.contains(customization.identifier))) {
+                binding.buyButton.visibility = View.GONE
+            } else {
+                binding.buyButton.visibility = View.VISIBLE
+                if (customization.customizationSet?.contains("timeTravel") == true) {
+                    binding.priceLabel.currency = "hourglasses"
+                } else {
+                    binding.priceLabel.currency = "gems"
+                }
+                binding.priceLabel.value = customization.price?.toDouble() ?: 0.0
+            }
+
+            if (activeCustomization == customization.identifier) {
+                binding.wrapper.background = itemView.context.getDrawable(R.drawable.layout_rounded_bg_gray_700_brand_border)
+            } else {
+                binding.wrapper.background = itemView.context.getDrawable(R.drawable.layout_rounded_bg_gray_700)
+            }
+        }
+
+        override fun onClick(v: View) {
+            if (customization?.isUsable(ownedCustomiztations.contains(customization?.identifier)) == false) {
+                if (customization?.customizationSet?.contains("timeTravel") == true) {
+                    val dialog = PiloterrAlertDialog(itemView.context)
+                    dialog.setMessage(R.string.purchase_from_timetravel_shop)
+                    dialog.addButton(R.string.go_shopping, true) { _, _ ->
+                        MainNavigationController.navigate(R.id.shopsFragment, bundleOf(Pair("selectedTab", 3)))
+                    }
+                    dialog.addButton(R.string.reward_dialog_dismiss, false)
+                    dialog.show()
+                } else {
+                    val dialogContent = LayoutInflater.from(itemView.context).inflate(R.layout.dialog_purchase_customization, null) as LinearLayout
+
+                    val imageView = dialogContent.findViewById<SimpleDraweeView>(R.id.imageView)
+                    DataBindingUtils.loadImage(imageView, customization?.getImageName(userSize, hairColor))
+
+                    val priceLabel = dialogContent.findViewById<TextView>(R.id.priceLabel)
+                    priceLabel.text = customization?.price.toString()
+
+                    (dialogContent.findViewById<View>(R.id.gem_icon) as? ImageView)?.setImageBitmap(PiloterrIconsHelper.imageOfGem())
+
+                    val dialog = PiloterrAlertDialog(itemView.context)
+                    dialog.addButton(R.string.purchase_button, true) { _, _ ->
+                        if (customization?.price ?: 0 > gemBalance) {
+                            MainNavigationController.navigate(R.id.gemPurchaseActivity, bundleOf(Pair("openSubscription", false)))
+                            return@addButton
+                        }
+
+                        customization?.let {
+                            unlockCustomizationEvents.onNext(it)
+                        }
+                    }
+                    dialog.setTitle(R.string.purchase_customization)
+                    dialog.setAdditionalContentView(dialogContent)
+                    dialog.addButton(R.string.reward_dialog_dismiss, false)
+                    dialog.show()
+                }
+                return
+            }
+
+            if (customization?.identifier == activeCustomization) {
+                return
+            }
+
+            customization?.let {
+                selectCustomizationEvents.onNext(it)
+            }
+        }
+    }
+
+    internal inner class SectionViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView), View.OnClickListener {
+
+        private val binding = CustomizationSectionHeaderBinding.bind(itemView)
+        private val label: TextView by bindView(itemView, R.id.label)
+        var context: Context = itemView.context
+        private var set: CustomizationSet? = null
+
+        init {
+            binding.purchaseSetButton.setOnClickListener(this)
+        }
+
+        fun bind(set: CustomizationSet) {
+            this.set = set
+            this.label.text = set.text
+            if (set.hasPurchasable && !set.identifier.contains("timeTravel")) {
+                binding.purchaseSetButton.visibility = View.VISIBLE
+                binding.setPriceLabel.value = set.price.toDouble()
+                binding.setPriceLabel.currency = "gems"
+            } else {
+                binding.purchaseSetButton.visibility = View.GONE
+            }
+        }
+
+        override fun onClick(v: View) {
+            val dialogContent = LayoutInflater.from(context).inflate(R.layout.dialog_purchase_customization, null) as LinearLayout
+
+            val priceLabel = dialogContent.findViewById<TextView>(R.id.priceLabel)
+            priceLabel.text = set?.price.toString()
+
+            val dialog = PiloterrAlertDialog(context)
+            dialog.addButton(R.string.purchase_button, true) { _, _ ->
+                        if (set?.price ?: 0 > gemBalance) {
+                            MainNavigationController.navigate(R.id.gemPurchaseActivity, bundleOf(Pair("openSubscription", false)))
+                            return@addButton
+                        }
+                        set?.customizations = ArrayList()
+                        customizationList
+                                .filter { Customization::class.java.isAssignableFrom(it.javaClass) }
+                                .map { it as Customization }
+                                .filter { !it.isUsable(ownedCustomiztations.contains(it.identifier)) && it.customizationSet != null && it.customizationSet == set?.identifier }
+                                .forEach { set?.customizations?.add(it) }
+                        if (additionalSetItems.isNotEmpty()) {
+                            additionalSetItems
+                                    .filter { !it.isUsable(ownedCustomiztations.contains(it.identifier)) && it.customizationSet != null && it.customizationSet == set?.identifier }
+                                    .forEach { set?.customizations?.add(it) }
+                        }
+                        set?.let {
+                            unlockSetEvents.onNext(it)
+                        }
+                    }
+            dialog.setTitle(context.getString(R.string.purchase_set_title, set?.text))
+            dialog.setAdditionalContentView(dialogContent)
+            dialog.addButton(R.string.reward_dialog_dismiss, false)
+            dialog.show()
+        }
+    }
+}

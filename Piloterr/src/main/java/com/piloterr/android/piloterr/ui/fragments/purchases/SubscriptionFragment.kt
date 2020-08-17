@@ -1,0 +1,276 @@
+package com.piloterr.android.piloterr.ui.fragments.purchases
+
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.EditText
+import androidx.core.view.isVisible
+import com.piloterr.android.piloterr.R
+import com.piloterr.android.piloterr.components.UserComponent
+import com.piloterr.android.piloterr.data.ApiClient
+import com.piloterr.android.piloterr.data.InventoryRepository
+import com.piloterr.android.piloterr.data.UserRepository
+import com.piloterr.android.piloterr.databinding.FragmentSubscriptionBinding
+import com.piloterr.android.piloterr.events.UserSubscribedEvent
+import com.piloterr.android.piloterr.extensions.addCancelButton
+import com.piloterr.android.piloterr.helpers.AppConfigManager
+import com.piloterr.android.piloterr.helpers.PurchaseHandler
+import com.piloterr.android.piloterr.helpers.PurchaseTypes
+import com.piloterr.android.piloterr.helpers.RxErrorHandler
+import com.piloterr.android.piloterr.models.user.User
+import com.piloterr.android.piloterr.proxy.CrashlyticsProxy
+import com.piloterr.android.piloterr.ui.activities.GemPurchaseActivity
+import com.piloterr.android.piloterr.ui.activities.GiftOneGetOneInfoActivity
+import com.piloterr.android.piloterr.ui.activities.GiftSubscriptionActivity
+import com.piloterr.android.piloterr.ui.fragments.BaseFragment
+import com.piloterr.android.piloterr.ui.helpers.DataBindingUtils
+import com.piloterr.android.piloterr.ui.helpers.dismissKeyboard
+import com.piloterr.android.piloterr.ui.views.dialogs.PiloterrAlertDialog
+import com.piloterr.android.piloterr.ui.views.subscriptions.SubscriptionOptionView
+import io.reactivex.functions.Consumer
+import org.greenrobot.eventbus.Subscribe
+import org.solovyev.android.checkout.Inventory
+import org.solovyev.android.checkout.Purchase
+import org.solovyev.android.checkout.Sku
+import javax.inject.Inject
+
+class SubscriptionFragment : BaseFragment(), GemPurchaseActivity.CheckoutFragment {
+
+    private lateinit var binding: FragmentSubscriptionBinding
+    @Inject
+    lateinit var crashlyticsProxy: CrashlyticsProxy
+    @Inject
+    lateinit var userRepository: UserRepository
+    @Inject
+    lateinit var appConfigManager: AppConfigManager
+    @Inject
+    lateinit var inventoryRepository: InventoryRepository
+    @Inject
+    lateinit var apiClient: ApiClient
+
+    private var selectedSubscriptionSku: Sku? = null
+    private var skus: List<Sku> = emptyList()
+
+    private var purchaseHandler: PurchaseHandler? = null
+
+    private var user: User? = null
+    private var hasLoadedSubscriptionOptions: Boolean = false
+    private var purchasedSubscription: Purchase? = null
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = FragmentSubscriptionBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    @Subscribe
+    fun fetchUser(event: UserSubscribedEvent?) {
+        refresh()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.subscriptionOptions.visibility = View.GONE
+        binding.subscriptionDetails.visibility = View.GONE
+        binding.subscriptionDetails.onShowSubscriptionOptions = { showSubscriptionOptions() }
+
+        binding.giftSubscriptionContainer.setOnClickListener { showGiftSubscriptionDialog() }
+        binding.giftSubscriptionButton.setOnClickListener { showGiftSubscriptionDialog() }
+
+        binding.subscription1month.setOnPurchaseClickListener(View.OnClickListener { selectSubscription(PurchaseTypes.Subscription1Month) })
+        binding.subscription3month.setOnPurchaseClickListener(View.OnClickListener { selectSubscription(PurchaseTypes.Subscription3Month) })
+        binding.subscription6month.setOnPurchaseClickListener(View.OnClickListener { selectSubscription(PurchaseTypes.Subscription6Month) })
+        binding.subscription12month.setOnPurchaseClickListener(View.OnClickListener { selectSubscription(PurchaseTypes.Subscription12Month) })
+
+        binding.subscribeButton.setOnClickListener { subscribeUser() }
+
+        binding.giftSubscriptionContainer.isVisible = appConfigManager.enableGiftOneGetOne()
+
+        binding.refreshLayout.setOnRefreshListener { refresh() }
+
+        compositeSubscription.add(inventoryRepository.getLatestMysteryItem().subscribe(Consumer {
+            DataBindingUtils.loadImage(binding.subBenefitsMysteryItemIcon, "shop_set_mystery_${it.key?.split("_")?.last()}")
+            binding.subBenefitsMysteryItemText.text = context?.getString(R.string.subscribe_listitem3_description_new, it.text)
+        }, RxErrorHandler.handleEmptyError()))
+    }
+
+    override fun onResume() {
+        super.onResume()
+        refresh()
+    }
+
+    private fun refresh() {
+        compositeSubscription.add(userRepository.retrieveUser(withTasks = false, forced = true).subscribe(Consumer {
+            this.setUser(it)
+            binding.refreshLayout.isRefreshing = false
+        }, RxErrorHandler.handleEmptyError()))
+    }
+
+    override fun injectFragment(component: UserComponent) {
+        component.inject(this)
+    }
+
+    override fun setupCheckout() {
+        purchaseHandler?.getAllSubscriptionProducts { subscriptions ->
+            this.skus = subscriptions.skus
+            for (sku in subscriptions.skus) {
+                updateButtonLabel(sku, sku.price, subscriptions)
+            }
+            selectSubscription(PurchaseTypes.Subscription1Month)
+            hasLoadedSubscriptionOptions = true
+            updateSubscriptionInfo()
+        }
+    }
+
+    private fun updateButtonLabel(sku: Sku, price: String, subscriptions: Inventory.Product) {
+        val matchingView = buttonForSku(sku)
+        if (matchingView != null) {
+            matchingView.setPriceText(price)
+            matchingView.sku = sku.id.code
+            matchingView.setIsPurchased(subscriptions.isPurchased(sku))
+        }
+    }
+
+    private fun selectSubscription(sku: String) {
+        for (thisSku in skus) {
+            if (thisSku.id.code == sku) {
+                selectSubscription(thisSku)
+                return
+            }
+        }
+    }
+
+    private fun selectSubscription(sku: Sku) {
+        if (this.selectedSubscriptionSku != null) {
+            val oldButton = buttonForSku(this.selectedSubscriptionSku)
+            oldButton?.setIsPurchased(false)
+        }
+        this.selectedSubscriptionSku = sku
+        val subscriptionOptionButton = buttonForSku(this.selectedSubscriptionSku)
+        subscriptionOptionButton?.setIsPurchased(true)
+        if (binding.subscribeButton != null) {
+            binding.subscribeButton?.isEnabled = true
+        }
+    }
+
+    private fun buttonForSku(sku: Sku?): SubscriptionOptionView? {
+        return buttonForSku(sku?.id?.code)
+    }
+
+    private fun buttonForSku(sku: String?): SubscriptionOptionView? {
+        return when (sku) {
+            PurchaseTypes.Subscription1Month -> binding.subscription1month
+            PurchaseTypes.Subscription3Month -> binding.subscription3month
+            PurchaseTypes.Subscription6Month -> binding.subscription6month
+            PurchaseTypes.Subscription12Month -> binding.subscription12month
+            else -> null
+        }
+    }
+
+    override fun setPurchaseHandler(handler: PurchaseHandler?) {
+        this.purchaseHandler = handler
+
+        handler?.checkForSubscription {
+            purchasedSubscription = it
+            checkIfNeedsCancellation()
+        }
+    }
+
+    private fun purchaseSubscription() {
+        selectedSubscriptionSku?.let { sku ->
+            purchaseHandler?.purchaseSubscription(sku) {
+                fetchUser(null)
+                binding.scrollView.smoothScrollTo(0, 0)
+            }
+        }
+    }
+
+    fun setUser(newUser: User) {
+        user = newUser
+        this.updateSubscriptionInfo()
+        purchaseHandler?.checkForSubscription {
+            purchasedSubscription = it
+            checkIfNeedsCancellation()
+        }
+    }
+
+    private fun updateSubscriptionInfo() {
+        if (user != null) {
+            val isSubscribed = user?.isSubscribed ?: false
+
+            if (binding.subscriptionDetails == null) {
+                return
+            }
+
+            if (isSubscribed) {
+                binding.headerImageView?.setImageResource(R.drawable.subscriber_header)
+                binding.subscriptionDetails.visibility = View.VISIBLE
+                binding.subscriptionDetails.currentUserID = user?.id
+                user?.purchased?.plan?.let { binding.subscriptionDetails.setPlan(it) }
+                binding.subscribeBenefitsTitle.setText(R.string.subscribe_prompt_thanks)
+                binding.subscriptionOptions.visibility = View.GONE
+            } else {
+                binding.headerImageView.setImageResource(R.drawable.subscribe_header)
+                if (!hasLoadedSubscriptionOptions) {
+                    return
+                }
+                binding.subscriptionOptions.visibility = View.VISIBLE
+                binding.subscriptionDetails.visibility = View.GONE
+                binding.subscribeBenefitsTitle.setText(R.string.subscribe_prompt)
+            }
+            binding.loadingIndicator.visibility = View.GONE
+        }
+    }
+
+    private fun checkIfNeedsCancellation() {
+        if (user?.purchased?.plan?.paymentMethod == "Google" &&
+                user?.purchased?.plan?.isActive == true &&
+                (purchasedSubscription?.autoRenewing == false ||purchasedSubscription == null)) {
+            compositeSubscription.add(apiClient.cancelSubscription().subscribe(Consumer {
+                refresh()
+            }, RxErrorHandler.handleEmptyError()))
+        }
+    }
+
+    private fun showSubscriptionOptions() {
+        binding.subscriptionOptions.visibility = View.VISIBLE
+        binding.subscriptionOptions.postDelayed({
+            binding.scrollView.smoothScrollTo(0, binding.subscriptionOptions.top)
+        }, 500)
+    }
+
+    private fun subscribeUser() {
+        purchaseSubscription()
+    }
+
+    private fun showGiftSubscriptionDialog() {
+        if (appConfigManager.enableGiftOneGetOne()) {
+            val intent = Intent(context, GiftOneGetOneInfoActivity::class.java)
+            context?.startActivity(intent)
+        } else {
+            val chooseRecipientDialogView = this.activity?.layoutInflater?.inflate(R.layout.dialog_choose_message_recipient, null)
+
+            this.activity?.let { thisActivity ->
+                val alert = PiloterrAlertDialog(thisActivity)
+                alert.setTitle(getString(R.string.gift_title))
+                alert.addButton(getString(R.string.action_continue), true) { _, _ ->
+                    val usernameEditText = chooseRecipientDialogView?.findViewById<View>(R.id.uuidEditText) as? EditText
+                    val intent = Intent(thisActivity, GiftSubscriptionActivity::class.java).apply {
+                        putExtra("username", usernameEditText?.text.toString())
+                    }
+                    startActivity(intent)
+                }
+                alert.addCancelButton { _, _ ->
+                    thisActivity.dismissKeyboard()
+                }
+                alert.setAdditionalContentView(chooseRecipientDialogView)
+                alert.show()
+            }
+        }
+    }
+}
