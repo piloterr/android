@@ -99,7 +99,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:drawableStart="@drawable/task_icon_calendar"
-                        android:drawableLeft="@drawable/task_icon_calendar"
+                        
                         android:textColor="@color/task_secondary_text"
                         android:visibility="invisible"
                         style="@style/Caption3"
@@ -111,9 +111,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/task_icon_size"
                         android:layout_marginStart="@dimen/task_icon_space"
-                        android:layout_marginLeft="@dimen/task_icon_space"
+                        
                         android:drawableStart="@drawable/task_icon_streak"
-                        android:drawableLeft="@drawable/task_icon_streak"
+                        
                         android:textColor="@color/task_secondary_text"
                         tools:text="10"
                         android:gravity="center_vertical"
@@ -124,7 +124,7 @@
                         android:layout_width="@dimen/task_icon_size"
                         android:layout_height="@dimen/task_icon_size"
                         android:layout_marginStart="@dimen/task_icon_space"
-                        android:layout_marginLeft="@dimen/task_icon_space"
+                        
                         android:contentDescription="@string/belongs_to_challenge"
                         android:scaleType="center"
                         app:srcCompat="@drawable/task_megaphone" />
@@ -134,7 +134,7 @@
                         android:layout_width="@dimen/task_icon_size"
                         android:layout_height="@dimen/task_icon_size"
                         android:layout_marginStart="@dimen/task_icon_space"
-                        android:layout_marginLeft="@dimen/task_icon_space"
+                        
                         android:contentDescription="@string/has_reminder"
                         android:scaleType="center"
                         app:srcCompat="@drawable/task_icon_reminder" />
@@ -150,7 +150,7 @@
                         android:layout_width="@dimen/task_icon_size"
                         android:layout_height="@dimen/task_icon_size"
                         android:layout_marginStart="@dimen/task_icon_space"
-                        android:layout_marginLeft="@dimen/task_icon_space"
+                        
                         android:contentDescription="@string/has_tag"
                         android:scaleType="center"
                         app:srcCompat="@drawable/task_icon_tag" />

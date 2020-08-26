@@ -131,7 +131,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/ic_username"
-                        android:drawableRight="@drawable/ic_username"
+                        
                         android:imeOptions="actionNext"
                         android:inputType="textPersonName"
                         android:nextFocusDown="@+id/email"
@@ -146,7 +146,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="textEmailAddress"
                         android:imeOptions="actionNext"
-                        android:drawableRight="@drawable/ic_email"
+                        
                         android:nextFocusDown="@+id/password"
                         android:drawableEnd="@drawable/ic_email"
                         android:hint="@string/emailAddress"
@@ -161,7 +161,7 @@
                         android:inputType="textPassword"
                         android:imeOptions="actionNext"
                         android:nextFocusDown="@+id/confirm_password"
-                        android:drawableRight="@drawable/ic_password"
+                        
                         android:drawableEnd="@drawable/ic_password"
                         android:hint="@string/password"
                         android:textColor="@color/white_75_alpha"
@@ -172,7 +172,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
-                        android:drawableRight="@drawable/ic_password"
+                        
                         android:drawableEnd="@drawable/ic_password"
                         android:imeOptions="actionDone"
                         android:hint="@string/confirmpassword"

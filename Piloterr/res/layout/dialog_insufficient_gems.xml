@@ -42,6 +42,6 @@
             android:layout_height="30dp"
             style="@style/PiloterrButton.Purple"
             android:minWidth="40dp"
-            tools:text="$0.99" />
+            tools:text="0.99 €" />
     </LinearLayout>
 </LinearLayout>

@@ -44,7 +44,7 @@ class WelcomeFragment : BaseFragment() {
     private val usernameVerificationEvents = PublishSubject.create<String>()
 
     private val checkmarkIcon: Drawable by lazy {
-        BitmapDrawable(resources, PiloterrIconsHelper.imageOfCheckmark(ContextCompat.getColor(context!!, R.color.green_50), 1f))
+        BitmapDrawable(resources, PiloterrIconsHelper.imageOfCheckmark(ContextCompat.getColor(requireContext(), R.color.green_50), 1f))
     }
     private val alertIcon: Drawable by lazy {
         BitmapDrawable(resources, PiloterrIconsHelper.imageOfAlertIcon())

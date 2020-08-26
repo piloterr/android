@@ -6,7 +6,7 @@
     <string name="sidebar_inbox">Messages</string>
     <string name="sidebar_tavern">Auberge</string>
     <string name="sidebar_party">Équipe</string>
-    <string name="sidebar_purchaseGems">Gemmes et abonnement</string>
+    <string name="sidebar_purchaseGems">Crédits et abonnement</string>
     <string name="sidebar_guilds">Groupes</string>
     <string name="sidebar_challenges">Défis</string>
     <string name="sidebar_section_inventory">Inventaire</string>
@@ -18,5 +18,5 @@
     <string name="sidebar_shops">Magasins</string>
     <string name="sidebar_stats">Stats</string>
     <string name="sidebar_subscription">Abonnement</string>
-    <string name="sidebar_gems">Acheter des gemmes</string>
+    <string name="sidebar_gems">Acheter des crédits</string>
 </resources>

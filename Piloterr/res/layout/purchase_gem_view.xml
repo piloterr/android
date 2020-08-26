@@ -39,5 +39,5 @@
         android:background="@drawable/purchase_button_background"
         android:textColor="@color/white"
         style="@style/Body1"
-        tools:text="$ 4.99"/>
+        tools:text="4.99 €"/>
 </LinearLayout>

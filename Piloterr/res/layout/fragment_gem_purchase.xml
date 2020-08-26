@@ -131,7 +131,7 @@
                         android:layout_weight="1"
                         app:gemAmount="4"
                         app:gemDrawable="@drawable/gems_4"
-                        android:layout_marginRight="16dp"
+                        
                         android:layout_marginEnd="16dp"
                         />
                     <com.piloterr.android.piloterr.ui.GemPurchaseOptionsView
@@ -156,7 +156,7 @@
                         android:layout_weight="1"
                         app:gemAmount="42"
                         app:gemDrawable="@drawable/gems_42"
-                        android:layout_marginRight="16dp"
+                        
                         android:layout_marginEnd="16dp" />
                     <com.piloterr.android.piloterr.ui.GemPurchaseOptionsView
                         android:id="@+id/gems_84_view"

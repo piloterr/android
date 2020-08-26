@@ -25,7 +25,7 @@
     <string name="push_notifications_sum">Set your push notifications settings</string>
     <string name="preference_push_you_won_challenge">You won a Challenge!</string>
     <string name="preference_push_received_a_private_message">Received a Private Message</string>
-    <string name="preference_push_gifted_gems">Gifted Gems</string>
+    <string name="preference_push_gifted_gems">Gifted Credits</string>
     <string name="preference_push_gifted_subscription">Gifted Subscription</string>
     <string name="preference_push_invited_to_party">Invited to Party</string>
     <string name="preference_push_invited_to_guild">Invited to Guild</string>
@@ -122,7 +122,7 @@
     <string name="avatar_size_broad">Broad</string>
     <string name="avatar_background">Background</string>
     <string name="purchase_customization">Purchase Customisation</string>
-    <string name="purchase_set_button">Unlock set for %d gems</string>
+    <string name="purchase_set_button">Unlock set for %d credits</string>
     <string name="purchase_button">Purchase</string>
     <string name="purchase_set_title">Purchase set %s</string>
     <string name="due_date">Due Date</string>
@@ -181,7 +181,7 @@
     <string name="guild">Guild</string>
     <string name="leave">Leave</string>
     <string name="join">Join</string>
-    <string name="gems">Gems</string>
+    <string name="gems">Credits</string>
     <string name="delete">Delete</string>
     <string name="name">Name</string>
     <string name="description">Description</string>
@@ -259,7 +259,7 @@
     <string name="share_hatched">I just hatched a %1$s %2$s pet in #Piloterr by completing my real-life tasks!</string>
     <string name="share_raised">I just gained a %1$s mount in #Piloterr by completing my real-life tasks!</string>
     <string name="open_in_store">Open in Play Store</string>
-    <string name="change_class_confirmation">Are you sure you want to change your class? This will cost 3 gems.</string>
+    <string name="change_class_confirmation">Are you sure you want to change your class? This will cost 3 credits.</string>
     <string name="change_class_equipment_warning">Warning: You will no longer be able to buy equipment from the %s class.</string>
     <string name="confirm">Confirm</string>
     <string name="market">Market</string>
@@ -288,8 +288,8 @@
     <string name="widget_todo_list">Piloterr To-Do List</string>
     <string name="google_services_missing">Google Play services could not be found.</string>
     <string name="gem_purchase_toolbartitle">Purchase</string>
-    <string name="gem_purchase_title">Buying gems supports the developers and helps keep Piloterr running</string>
-    <string name="gem_purchase_subtitle">Gems allow you to buy fun extras for your account, including:</string>
+    <string name="gem_purchase_title">Buying credits supports the developers and helps keep Piloterr running</string>
+    <string name="gem_purchase_subtitle">Credits allow you to buy fun extras for your account, including:</string>
     <string name="gem_purchase_listitem1">Cool costumes for your avatar</string>
     <string name="gem_purchase_listitem2">Awesome backgrounds</string>
     <string name="gem_purchase_listitem3">Quests that reward you with pet eggs</string>
@@ -309,14 +309,14 @@
     <string name="has_tag">Has Tag</string>
     <string name="subscribe_title">Subscribing supports the developers and helps keep Piloterr running</string>
     <string name="subscribe_prompt">Become a subscriber to receive these exclusive benefits!</string>
-    <string name="subscribe_listitem1">Gold for Gems</string>
+    <string name="subscribe_listitem1">Gold for Credits</string>
     <string name="subscribe_listitem2">Mystic Hourglasses</string>
     <string name="subscribe_listitem3">Monthly Mystery Items</string>
     <string name="subscribe_listitem4">Special Subscriber Pet</string>
     <string name="subscriptions">Subscriptions</string>
     <string name="subscription_duration">Recurring every %s</string>
     <string name="subscribe">Subscribe</string>
-    <string name="subscribe_listitem1_description">You’ll be able to buy Gems from the Market for 20 gold each!</string>
+    <string name="subscribe_listitem1_description">You’ll be able to buy Credits from the Market for 20 gold each!</string>
     <string name="subscribe_listitem2_description">Earn Mystic Hourglasses to purchase items in the Time Traveler’s Shop!</string>
     <string name="subscribe_listitem3_description">Subscribe now to get an exclusive set now and receive new items every month!</string>
     <string name="subscribe_listitem4_description">Receive the Royal Purple Jackalope pet when you become a new subscriber.</string>
@@ -331,7 +331,7 @@
     <string name="current_bonuses">Current Bonuses</string>
     <string name="months_subscribed">Months subscribed</string>
     <string name="current_hourclasses">Current Mystic Hourglasses</string>
-    <string name="monthly_gem_cap">Monthly gem cap</string>
+    <string name="monthly_gem_cap">Monthly credit cap</string>
     <string name="inactive">Inactive</string>
     <string name="one_month">1 Month</string>
     <string name="months">%d Months</string>
@@ -355,11 +355,11 @@
     <string name="official">Official</string>
     <string name="challenge">Challenge</string>
     <string name="not_part_of_a_challenge">You’re not part of any Challenges right now!</string>
-    <string name="join_a_challenge">Join a Challenge to add a curated set of tasks to your list, then compete against other Piloterrns to win achievements and even gems!</string>
+    <string name="join_a_challenge">Join a Challenge to add a curated set of tasks to your list, then compete against other members to win achievements and even credits!</string>
     <string name="check_the_public_challenge_tab">Tap the “Public” tab to find the user-created Challenges that are the best fit for you!</string>
     <string name="special">Special</string>
-    <string name="gem_for_gold_description">Because you subscribe to Piloterr, you can purchase a number of Gems each month using Gold.</string>
-    <string name="gem_shop">Gem</string>
+    <string name="gem_for_gold_description">Because you subscribe to Piloterr, you can purchase a number of Credits each month using Gold.</string>
+    <string name="gem_shop">Credit</string>
     <string name="mystery_item">Mystery Item</string>
     <string name="myster_item_notes">Each month, subscribers will receive a mystery item. This is usually released about one week before the end of the month.</string>
     <string name="open">Open</string>
@@ -434,8 +434,8 @@
     <string name="million_abbrev">m</string>
     <string name="billion_abbrev">b</string>
     <string name="available_until">Available until %s</string>
-    <string name="gems_left_max">Monthly Gems: %1$d/%2$d Remaining</string>
-    <string name="gems_left_nomax">Monthly Gems: %d Remaining</string>
+    <string name="gems_left_max">Monthly Credits: %1$d/%2$d Remaining</string>
+    <string name="gems_left_nomax">Monthly Credits: %d Remaining</string>
     <string name="health">Health</string>
     <string name="collect">Collect</string>
     <string name="rage_meter">Rage Meter</string>
@@ -448,7 +448,7 @@
     <string name="reset_account">Reset Account</string>
     <string name="reset_account_description">WARNING! This resets many parts of your account. This is highly discouraged, but some people find it useful in the beginning after playing with the site for a short time.\n\nYou will lose all your levels, gold, and experience points. All your tasks (except those from challenges) will be deleted permanently and you will lose all of their historical data. You will lose all your equipment but you will be able to buy it all back, including all limited edition equipment or subscriber Mystery items that you already own (you will need to be in the correct class to re-buy class-specific gear). You will keep your current class and your pets and mounts. You might prefer to use an Orb of Rebirth instead, which is a much safer option and which will preserve your tasks and equipment.</string>
     <string name="delete_account">Delete Account</string>
-    <string name="delete_account_description">This will delete your account forever, and it can never be restored! Banked or spent Gems will not be refunded. If you’re absolutely certain, type your password into the text box below.</string>
+    <string name="delete_account_description">This will delete your account forever, and it can never be restored! Banked or spent Credits will not be refunded. If you’re absolutely certain, type your password into the text box below.</string>
     <string name="reset_account_confirmation">reset my account</string>
     <string name="delete_account_confirmation">delete my account</string>
     <string name="danger_zone">Danger Zone</string>
@@ -481,28 +481,28 @@
     <string name="login_incentive">Unlock by logging into Piloterr regularly</string>
     <string name="create_account">Unlock by creating an account</string>
     <string name="subscription_duration_norenew">For %s</string>
-    <string name="subscribe1month_gemcap">25 Gem cap</string>
-    <string name="subscribe3month_gemcap">30 Gem cap</string>
-    <string name="subscribe6month_gemcap">35 Gem cap</string>
-    <string name="subscribe12month_gemcap">45 Gem cap</string>
+    <string name="subscribe1month_gemcap">25 Credit cap</string>
+    <string name="subscribe3month_gemcap">30 Credit cap</string>
+    <string name="subscribe6month_gemcap">35 Credit cap</string>
+    <string name="subscribe12month_gemcap">45 Credit cap</string>
     <string name="due">Due</string>
     <string name="inbox">Messages</string>
     <string name="welcome_text">Oh, you must be new here. I’m Justin, I’ll be your guide in Piloterr.
 \n
 \nFirst, what should we call you\? Feel free to change what I picked. When you’re all set, let’s create your avatar!</string>
     <string name="dated">Scheduled</string>
-    <string name="gem_reward">Gem prize</string>
+    <string name="gem_reward">Credit prize</string>
     <string name="create_challenge">Create Challenge</string>
-    <string name="challenge_create_error_tavern_one_gem">You need at least 1 gem to create a public challenge.</string>
+    <string name="challenge_create_error_tavern_one_gem">You need at least 1 credit to create a public challenge.</string>
     <string name="identify_your_challenge_with_a_tag">Identify your challenge with a short name</string>
     <string name="challenge_create_error_tag">You need a short name to create this Challenge.</string>
     <string name="str_abbrv">Str</string>
     <string name="per_abbrv">Per</string>
     <string name="int_abbrv">Int</string>
     <string name="con_abbrv">Con</string>
-    <string name="delete_oauth_account_description">This will delete your account forever, and it can never be restored! Banked or spent Gems will not be refunded. If you’re absolutely certain, type DELETE into the text box below.</string>
+    <string name="delete_oauth_account_description">This will delete your account forever, and it can never be restored! Banked or spent Credits will not be refunded. If you’re absolutely certain, type DELETE into the text box below.</string>
     <string name="insufficientGold">You need to complete more tasks before you can afford this item!</string>
-    <string name="insufficientGems">You\'ll need more Gems to buy this item!</string>
+    <string name="insufficientGems">You\'ll need more Credits to buy this item!</string>
     <string name="purchase_gems">Purchase gems</string>
     <string name="insufficientHourglasses">You\'ll need more Mystic Hourglasses to buy this item!</string>
     <string name="get_hourglasses">Get hourglasses</string>
@@ -595,7 +595,7 @@
     <string name="no_party_title">Play Piloterr in a Party</string>
     <string name="join_party_description">Give a Party member the username found below and they can send you an invite</string>
     <string name="join_party_title">Want to join a party\?</string>
-    <string name="insufficientSubscriberGems">You have bought all the Gems you can this month. More become available within the first three days of each month. Thanks for subscribing!</string>
+    <string name="insufficientSubscriberGems">You have bought all the Credits you can this month. More become available within the first three days of each month. Thanks for subscribing!</string>
     <string name="world_boss_description_title">What\'s a World Boss\?</string>
     <string name="world_boss_description_intro">A World Boss is a special event where the whole community works together to take down a powerful monster with their tasks!</string>
     <string name="world_boss_description_1">Complete tasks to damage the Boss</string>
@@ -620,7 +620,7 @@
     <string name="same_day_reminder_text">The more you add, the more you\'ll be rewarded. Even small habits add up to big change.</string>
     <string name="next_day_reminder_title">Did you check off your tasks today\?</string>
     <string name="next_day_reminder_text">There\'s lots to unlock and discover as you level up, so keep up with your tasks and have fun!</string>
-    <string name="daily_tip_0">Want to try something new\? Join a Challenge to expand your task list and win some Gems!</string>
+    <string name="daily_tip_0">Want to try something new\? Join a Challenge to expand your task list and win some Credits!</string>
     <string name="daily_tip_1">Add checklists to your To-Dos to multiply your rewards!</string>
     <string name="daily_tip_2">You can change how often each Daily repeats. Even infrequent tasks can be schedulled.</string>
     <string name="daily_tip_3">You can schedule specific reminders for Dailies too.</string>
@@ -732,24 +732,24 @@
     <string name="copy_userid">Copy User ID</string>
     <string name="preference_push_unjoined_guild_mention">\@Mentions in not joined Groups</string>
     <string name="preference_push_joined_guild_mention">\@Mentions in joined Groups</string>
-    <string name="gems_to_gift">Gems to gift</string>
-    <string name="gift_gems_balance_subtitle">Enter how many of your Gems you\'d like to send below or switch tabs to purchase Gems to gift</string>
+    <string name="gems_to_gift">Credits to gift</string>
+    <string name="gift_gems_balance_subtitle">Enter how many of your Credits you\'d like to send below or switch tabs to purchase Credits to gift</string>
     <string name="from_balance">From Balance</string>
     <string name="purchase">Purchase</string>
     <string name="preference_push_party_mention">\@Mentions in Party</string>
     <string name="more_out_of_piloterr">Get more out of Piloterr</string>
     <string name="gift_gems_disclaimer">Piloterr will never require you to gift gems to other players. Begging people for gems is a violation of the Community Guidelines and should be reported to hello@piloterr.com.</string>
-    <string name="gems_gift_description">Want to bestow a shiny haul of Gems to someone else\?</string>
+    <string name="gems_gift_description">Want to bestow a shiny haul of Credits to someone else\?</string>
     <string name="profile_gift_subscription">Gift
 \nSubscription</string>
     <string name="profile_gift_gems">Gift
-\nGems</string>
+\nCredits</string>
     <string name="profile_send_message">Send
 \nMessage</string>
-    <string name="gift_gems">Gift Gems</string>
+    <string name="gift_gems">Gift Credits</string>
     <string name="see_other_options">See other Options</string>
-    <string name="promo_subscription_buy_gems_description">Become a Subscriber to buy Gems with gold, get monthly mystery items, increased drop caps and more!</string>
-    <string name="promo_subscription_buy_gems_prompt">Need Gems\?</string>
+    <string name="promo_subscription_buy_gems_description">Become a Subscriber to buy Credits with gold, get monthly mystery items, increased drop caps and more!</string>
+    <string name="promo_subscription_buy_gems_prompt">Need Credits\?</string>
     <string name="preference_push_party_activity">Party Activity</string>
     <string name="search_hint">Search tasks</string>
     <string name="search">Search</string>
@@ -887,7 +887,7 @@
     <string name="gift_confirmation_text_gems">You sent %s some gems.</string>
     <string name="gift_confirmation_text_sub">You sent %s a %s-month Piloterr subscription.</string>
     <string name="gift_confirmation_text_sub_g1g1">You sent %s a %s-month Piloterr subscription and the same subscription was applied to your account for our Gift One Get One promotion!</string>
-    <string name="gift_gems_subtitle">Choose the gem packet you’d like to gift below!</string>
+    <string name="gift_gems_subtitle">Choose the credit packet you’d like to gift below!</string>
     <string name="join_party_description_guild">Give the username below to a friend or head to the %s to meet potential comrades!</string>
     <string name="insufficientGoldTitle">Not Enough Gold</string>
     <string name="empty_title_rewards_filtered">No Rewards</string>
@@ -952,11 +952,11 @@
     <string name="subscriber_currency">Subscriber Currency</string>
     <string name="game_mechanics">Game Mechanics</string>
     <string name="common_questions">Common Questions</string>
-    <string name="gems_description">Gems are a currency purchased with real money that allow you to buy extra content within Piloterr and are one of the main sources of financial support for the Piloterr team alongside subscriptions.
+    <string name="gems_description">Credits are a currency purchased with real money that allow you to buy extra content within Piloterr and are one of the main sources of financial support for the Piloterr team alongside subscriptions.
 \n
-\nAll content purchased through Gems is purely cosmetic or can be obtained for free with time.
+\nAll content purchased through Credits is purely cosmetic or can be obtained for free with time.
 \n
-\nYou can also receive Gems through gifts from other players, Challenge prizes, contributing to Piloterr, or subscribing.</string>
+\nYou can also receive Credits through gifts from other players, Challenge prizes, contributing to Piloterr, or subscribing.</string>
     <string name="currency">Currency</string>
     <string name="premium_currency">Premium Currency</string>
     <string name="standard">Standard</string>
@@ -979,7 +979,7 @@
 \n
 \n**Earn Gold** through completing tasks or quests, or through some Class skills. Higher **Perception stats** raise the amount of Gold you earn.
 \n
-\nIf you subscribe to Piloterr, you can even use Gold to purchase a number of Gems determined by the length of time you’ve been subscribed.</string>
+\nIf you subscribe to Piloterr, you can even use Gold to purchase a number of Credits determined by the length of time you’ve been subscribed.</string>
     <string name="mana_points">Mana Points</string>
     <string name="experience_description">Experience points represent your progress and allow you to level up. You’ll mainly **gain EXP** from completing tasks or quests, but there are also some class skills that give EXP.
 \n

@@ -27,7 +27,7 @@
             android:orientation="vertical"
             android:paddingBottom="@dimen/task_top_bottom_padding"
             android:paddingEnd="@dimen/reward_spacing"
-            android:paddingRight="@dimen/reward_spacing"
+            
             android:paddingTop="@dimen/task_top_bottom_padding">
 
             <com.piloterr.android.piloterr.ui.views.EllipsisTextView

@@ -25,7 +25,7 @@
     <string name="push_notifications_sum">Paramétrez vos notifications push</string>
     <string name="preference_push_you_won_challenge">Vous avez gagné un défi !</string>
     <string name="preference_push_received_a_private_message">Message privé reçu</string>
-    <string name="preference_push_gifted_gems">Gemmes offertes</string>
+    <string name="preference_push_gifted_gems">Crédits offertes</string>
     <string name="preference_push_gifted_subscription">Abonnement offert</string>
     <string name="preference_push_invited_to_party">Invitation dans une équipe</string>
     <string name="preference_push_invited_to_guild">Invitation dans une guilde</string>
@@ -125,7 +125,7 @@
     <string name="avatar_size_broad">Trapu</string>
     <string name="avatar_background">Arrière-plan</string>
     <string name="purchase_customization">Acheter une personnalisation</string>
-    <string name="purchase_set_button">Débloquer le lot pour %d gemmes</string>
+    <string name="purchase_set_button">Débloquer le lot pour %d crédits</string>
     <string name="purchase_button">Acheter</string>
     <string name="purchase_set_title">Acheter le lot %s</string>
     <string name="due_date">Échéance</string>
@@ -184,7 +184,7 @@
     <string name="guild">Guilde</string>
     <string name="leave">Quitter</string>
     <string name="join">Rejoindre</string>
-    <string name="gems">Gemmes</string>
+    <string name="gems">Crédits</string>
     <string name="delete">Supprimer</string>
     <string name="name">Nom</string>
     <string name="description">Description</string>
@@ -264,7 +264,7 @@
     <string name="dialog_go_back">Revenir</string>
     <string name="opt_out_confirmation">Confirmez-vous vouloir désactiver votre compte ?</string>
     <string name="change_class">Changez votre classe</string>
-    <string name="change_class_description">Changez de classe et ré-attribuez vos points d\'attribut pour 3 gemmes.</string>
+    <string name="change_class_description">Changez de classe et ré-attribuez vos points d\'attribut pour 3 crédits.</string>
     <string name="enable_class">Activer le système de classe</string>
     <string name="changing_class_progress">Changer de classe</string>
     <string name="by_email">Par email</string>
@@ -280,7 +280,7 @@
     <string name="share_hatched">Je viens de faire éclore un familier%1$s %2$s à Piloterr en réalisant mes tâches quotidiennes !</string>
     <string name="share_raised">Je viens de faire éclore une monture %1$s à Piloterr en réalisant mes tâches quotidiennes !</string>
     <string name="open_in_store">Ouvrir dans le Play Store</string>
-    <string name="change_class_confirmation">Êtes-vous sûr·e de vouloir changer de classe ? Cela vous coûtera 3 gemmes.</string>
+    <string name="change_class_confirmation">Êtes-vous sûr·e de vouloir changer de classe ? Cela vous coûtera 3 crédits.</string>
     <string name="change_class_equipment_warning">Attention : vous ne pourrez plus acheter l\'équipement de la classe %s.</string>
     <string name="confirm">Confirmer</string>
     <string name="market">Marché</string>
@@ -312,8 +312,8 @@
     <string name="widget_todo_list">Liste des tâches Piloterr</string>
     <string name="google_services_missing">Le service Google Play n\'a pas pu être trouvé.</string>
     <string name="gem_purchase_toolbartitle">Acheter</string>
-    <string name="gem_purchase_title">Acheter des gemmes soutient les développeurs et aide Piloterr à fonctionner</string>
-    <string name="gem_purchase_subtitle">Les gemmes permettent d\'acheter des extras amusants pour votre compte, comme :</string>
+    <string name="gem_purchase_title">Acheter des crédits soutient les développeurs et aide Piloterr à fonctionner</string>
+    <string name="gem_purchase_subtitle">Les crédits permettent d\'acheter des extras amusants pour votre compte, comme :</string>
     <string name="gem_purchase_listitem1">Des costumes chouettes pour votre avatar</string>
     <string name="gem_purchase_listitem2">De magnifiques arrière-plans</string>
     <string name="gem_purchase_listitem3">Des quêtes qui vous récompensent avec des oeufs de familiers</string>
@@ -333,7 +333,7 @@
     <string name="has_tag">A une étiquette</string>
     <string name="subscribe_title">L\'abonnement aide l\'équipe de développement et permet à Piloterr de fonctionner</string>
     <string name="subscribe_prompt">Abonnez vous pour obtenir ces bénéfices utiles !</string>
-    <string name="subscribe_listitem1">De l\'or pour les gemmes</string>
+    <string name="subscribe_listitem1">De l\'or pour les crédits</string>
     <string name="subscribe_listitem2">Sabliers mystiques</string>
     <string name="subscribe_listitem3">Objets mystère mensuels</string>
     <string name="subscribe_listitem4">Familier d\'abonnement exclusif</string>
@@ -341,14 +341,14 @@
     <string name="subscription_duration">Périodique tous les %s</string>
     <string name="subscription_duration_norenew">Pour %s</string>
     <string name="subscribe">S\'abonner</string>
-    <string name="subscribe_listitem1_description">Vous pourrez acheter des gemmes au marché pour 20 pièces d\'or chacune !</string>
+    <string name="subscribe_listitem1_description">Vous pourrez acheter des crédits au marché pour 20 pièces d\'or chacune !</string>
     <string name="subscribe_listitem2_description">Obtenez des Sabliers mystiques pour acheter des objets dans la boutique des Voyageurs Temporels !</string>
     <string name="subscribe_listitem3_description">Abonnez-vous pour recevoir un ensemble exclusif et de nouveaux objets tous les mois !</string>
     <string name="subscribe_listitem4_description">Obtenez le familier jackalope pourpre royal lorsque vous vous abonnez.</string>
-    <string name="subscribe1month_gemcap">Plafond de 25 gemmes</string>
-    <string name="subscribe3month_gemcap">Plafond de 30 gemmes</string>
-    <string name="subscribe6month_gemcap">Plafond de 35 gemmes</string>
-    <string name="subscribe12month_gemcap">Plafond de 45 gemmes</string>
+    <string name="subscribe1month_gemcap">Plafond de 25 crédits</string>
+    <string name="subscribe3month_gemcap">Plafond de 30 crédits</string>
+    <string name="subscribe6month_gemcap">Plafond de 35 crédits</string>
+    <string name="subscribe12month_gemcap">Plafond de 45 crédits</string>
     <string name="subscription_hourglasses">+%d sabliers mystiques</string>
     <string name="payment_method">Méthode de paiement</string>
     <string name="subscription">Abonnement</string>
@@ -361,7 +361,7 @@
     <string name="current_bonuses">Bonus actuels</string>
     <string name="months_subscribed">Mois souscrits</string>
     <string name="current_hourclasses">Sabliers mystiques actuels</string>
-    <string name="monthly_gem_cap">Limite de gemmes mensuelle</string>
+    <string name="monthly_gem_cap">Limite de crédits mensuelle</string>
     <string name="inactive">Inactif</string>
     <string name="one_month">1 mois</string>
     <string name="months">%d mois</string>
@@ -385,11 +385,11 @@
     <string name="official">Officiel</string>
     <string name="challenge">Défi</string>
     <string name="not_part_of_a_challenge">Vous ne faites pas encore partie de ce défi !</string>
-    <string name="join_a_challenge">Rejoignez un défi pour ajouter une sélection de tâches à votre liste, puis affrontez les autres participants pour gagner des succès ou même des gemmes !</string>
+    <string name="join_a_challenge">Rejoignez un défi pour ajouter une sélection de tâches à votre liste, puis affrontez les autres participants pour gagner des succès ou même des crédits !</string>
     <string name="check_the_public_challenge_tab">Sélectionnez l\'onglet \"Publique\" pour trouver les défi créés par la communauté qui vous sont le plus adaptés !</string>
     <string name="inbox">Messages</string>
     <string name="special">Spécial</string>
-    <string name="gem_for_gold_description">Grâce à votre abonnement, vous pouvez acheter des gemmes chaque mois en utilisant de l\'or.</string>
+    <string name="gem_for_gold_description">Grâce à votre abonnement, vous pouvez acheter des crédits chaque mois en utilisant de l\'or.</string>
     <string name="gem_shop">Gemme</string>
     <string name="mystery_item">Objet mystère</string>
     <string name="myster_item_notes">Chaque mois, votre abonnement vous donnera accès à un objet mystère. Il est généralement disponible une semaine avant la fin du mois.</string>
@@ -437,15 +437,15 @@
     <string name="reload_content">Recharger le contenu</string>
     <string name="dailyDueDefaultView">Passez le quotidiennes sur l\'onglet \'échéance\' par défaut</string>
     <string name="dailyDueDefaultViewDescription">Une fois cette option définie, les quotidiennes seront par défait sur l\'onglet \'échéance\' à la place de \'toutes\'</string>
-    <string name="no_billing_gems">Votre appareil ne dispose pas de méthode de paiement supportée. Veuillez utiliser le site piloterr si vous voulez acheter des gemmes.</string>
+    <string name="no_billing_gems">Votre appareil ne dispose pas de méthode de paiement supportée. Veuillez utiliser le site piloterr si vous voulez acheter des crédits.</string>
     <string name="no_billing_subscriptions">Votre appareil ne dispose pas de méthode de paiement supportée. Veuillez utiliser le site piloterr si vous voulez payer un abonnement.</string>
     <string name="save">Enregistrer</string>
     <string name="location">Localisation</string>
-    <string name="gem_reward">Récompense en gemmes</string>
+    <string name="gem_reward">Récompense en crédits</string>
     <string name="tasks">Tâches</string>
     <string name="create_challenge">Créer un défi</string>
-    <string name="challenge_create_error_tavern_one_gem">Il vous faut au moins 1 gemme pour créer un défi public.</string>
-    <string name="challenge_create_error_enough_gems">Vous ne possédez pas assez de gemmes pour créer un défi.</string>
+    <string name="challenge_create_error_tavern_one_gem">Il vous faut au moins 1 crédit pour créer un défi public.</string>
+    <string name="challenge_create_error_enough_gems">Vous ne possédez pas assez de crédits pour créer un défi.</string>
     <string name="identify_your_challenge_with_a_tag">Identifiez votre défi avec une étiquette</string>
     <string name="challenge_create_error_tag">Il vous faut un nom nom court pour créer ce défi.</string>
     <string name="challenge_create_error_no_tasks">Vous devez ajouter au moins une tâche pour créer ce défi.</string>
@@ -474,8 +474,8 @@
     <string name="million_abbrev">mo</string>
     <string name="billion_abbrev">ma</string>
     <string name="available_until">Disponible jusqu\'au %s</string>
-    <string name="gems_left_max">Gemmes mensuelles : %1$d/%2$d restantes</string>
-    <string name="gems_left_nomax">Gemmes mensuelles : %d restantes</string>
+    <string name="gems_left_max">Crédits mensuelles : %1$d/%2$d restantes</string>
+    <string name="gems_left_nomax">Crédits mensuelles : %d restantes</string>
     <string name="health">Santé</string>
     <string name="collect">Réunir</string>
     <string name="rage_meter">Barre de rage</string>
@@ -492,15 +492,15 @@
     <string name="reset_account">Réinitialiser le compte</string>
     <string name="reset_account_description">ATTENTION ! Cette action va réinitialiser de nombreux aspects de votre compte. Cela est hautement déconseillé, mais certaines personnes peuvent trouver utile de le faire après avoir joué un peu avec le site.\n\nVous perdrez tous vos niveau, votre or et vos points d\'expérience. Toutes vos tâches (à l\'exception de celles des défis) seront détruites de façon permanente et vous perdrez leur historique. Vous perdrez tout votre équipement, mais vous pourrez le racheter, y compris l\'équipement en édition limité et les objets mystères d\'abonnement que vous possédez déjà (vous aurez besoin d\'être de la classe correspondant à l\'équipement spécifique à une classe). Vous conserverez votre classe actuelle ainsi que vos familiers et montures. Vous voudrez peut-être utiliser l\'orbe de renaissance à la place, qui est une option plus sûre et conservera vos tâches et votre équipement.</string>
     <string name="delete_account">Supprimer le compte</string>
-    <string name="delete_account_description">Cela va supprimer votre compte définitivement et il ne pourra pas être restauré ! Les gemmes sur votre compte ou celles dépensées ne seront pas remboursées. Si vous confirmez définitivement, tapez votre mot de passe dans le champ de texte ci-dessous.</string>
+    <string name="delete_account_description">Cela va supprimer votre compte définitivement et il ne pourra pas être restauré ! Les crédits sur votre compte ou celles dépensées ne seront pas remboursées. Si vous confirmez définitivement, tapez votre mot de passe dans le champ de texte ci-dessous.</string>
     <string name="reset_account_confirmation">réinitialiser mon compte</string>
     <string name="delete_account_confirmation">supprimer mon compte</string>
     <string name="danger_zone">Zone de danger</string>
     <string name="resetting_account">Réinitialisation du compte</string>
     <string name="deleting_account">Suppression du compte</string>
     <string name="insufficientGold">Vous devez compléter plus de taches avant de pouvoir vous offrir cet objet ! </string>
-    <string name="insufficientGems">Vous n\'avez pas assez de gemmes pour acheter cet objet !</string>
-    <string name="purchase_gems">Acheter des gemmes</string>
+    <string name="insufficientGems">Vous n\'avez pas assez de crédits pour acheter cet objet !</string>
+    <string name="purchase_gems">Acheter des crédits</string>
     <string name="insufficientHourglasses">Vous n\'avez pas assez de sabliers mystiques pour acheter cet objet !</string>
     <string name="get_hourglasses">Obtenir des sabliers mystiques</string>
     <string name="subscribe_for_hourglasses">S\'abonner pour obtenir des sabliers mystiques</string>
@@ -591,7 +591,7 @@
     <string name="no_party_title">Jouer à Piloterr dans une équipe</string>
     <string name="join_party_description">Donnez le nom d\'utilisateur ci-dessous à un membre de l\'équipe pour pouvoir recevoir l\'invitation</string>
     <string name="join_party_title">Vous voulez rejoindre une équipe ?</string>
-    <string name="insufficientSubscriberGems">Vous avez acheté toutes les gemmes possibles de ce mois. D\'autres seront disponibles dans les trois premiers jours de chaque mois. Merci pour votre abonnement !</string>
+    <string name="insufficientSubscriberGems">Vous avez acheté toutes les crédits possibles de ce mois. D\'autres seront disponibles dans les trois premiers jours de chaque mois. Merci pour votre abonnement !</string>
     <string name="world_boss_description_title">Qu\'est-ce qu\'un boss mondial ?</string>
     <string name="world_boss_description_intro">Un boss mondial est un événement spécial où toute la communauté travaille ensemble pour combattre avec ses tâches un puissant monstre !</string>
     <string name="world_boss_description_1">Réalisez vos tâches pour infliger des dégâts au boss</string>
@@ -616,7 +616,7 @@
     <string name="same_day_reminder_text">Le plus vous en ajoutez, le plus vous aurez de récompenses. Même les petites habitudes mènent à de grands changements.</string>
     <string name="next_day_reminder_title">Avez-vous validé vos tâches quotidiennes aujourd\'hui ?</string>
     <string name="next_day_reminder_text">Il y a beaucoup à découvrir en gagnant des niveaux, alors continuez avec vos tâches et amusez-vous !</string>
-    <string name="daily_tip_0">Vous voulez essayer quelque chose de nouveau ? Rejoignez un défi pour augmenter votre liste de tâches et gagnez des gemmes !</string>
+    <string name="daily_tip_0">Vous voulez essayer quelque chose de nouveau ? Rejoignez un défi pour augmenter votre liste de tâches et gagnez des crédits !</string>
     <string name="daily_tip_1">Ajoutez des listes de vérifications à vos taches à faire pour augmenter vos récompenses !</string>
     <string name="daily_tip_2">Vous pouvez modifier la périodicité des tâches quotidiennes. Même les tâches les moins fréquentes peuvent être planifiées.</string>
     <string name="daily_tip_3">Vous pouvez également planifier des rappels pour vos tâches quotidiennes.</string>
@@ -673,7 +673,7 @@
     <string name="gift_confirmation_text_g1g1">Votre abonnement offert a été envoyé, et votre abonnement a été rattaché à votre compte !</string>
     <string name="gift_confirmation_text">Votre abonnement offert a été envoyé, et votre abonnement a été rattaché à votre compte.</string>
     <string name="opting_out_progress">Ne pas choisir</string>
-    <string name="delete_oauth_account_description">Cela va définitivement supprimer votre compte, et il ne pourra pas être restauré ! Les gemmes sur votre compte ou celles dépensées ne seront pas remboursées. Si vous confirmez définitivement, tapez DELETE dans le champ ci-dessous.</string>
+    <string name="delete_oauth_account_description">Cela va définitivement supprimer votre compte, et il ne pourra pas être restauré ! Les crédits sur votre compte ou celles dépensées ne seront pas remboursées. Si vous confirmez définitivement, tapez DELETE dans le champ ci-dessous.</string>
     <string name="discover">Découvrir</string>
     <string name="damage_paused">Dommages en pause</string>
     <string name="preference_push_important_announcements">Annonces importantes</string>
@@ -828,29 +828,29 @@
     <string name="copy_userid">Copier l\'identifiant</string>
     <string name="preference_push_unjoined_guild_mention">\@mentions dans des groupes</string>
     <string name="preference_push_joined_guild_mention">\@mentions dans vos groupes</string>
-    <string name="gems_to_gift">Gemmes à offrir</string>
-    <string name="gift_gems_balance_subtitle">Indiquez ci-dessous combien de vos propres gemmes vous voudriez envoyer, ou changez d\'onglet pour acheter des gemmes à offrir</string>
-    <string name="from_balance">Offrir vos propres gemmes</string>
+    <string name="gems_to_gift">Crédits à offrir</string>
+    <string name="gift_gems_balance_subtitle">Indiquez ci-dessous combien de vos propres crédits vous voudriez envoyer, ou changez d\'onglet pour acheter des crédits à offrir</string>
+    <string name="from_balance">Offrir vos propres crédits</string>
     <string name="purchase">Acheter</string>
     <string name="preference_push_party_mention">\@mentions dans l\'équipe</string>
     <string name="more_out_of_piloterr">Profitez encore plus d\'Piloterr</string>
-    <string name="gift_gems_disclaimer">Piloterr ne vous demandera jamais d\'offrir des gemmes aux autres joueurs. Supplier qu\'on vous donne des gemmes est une violation de nos règles de vie en communauté, et toute fois où cela se produit doit être signalée à hello@piloterr.com.</string>
+    <string name="gift_gems_disclaimer">Piloterr ne vous demandera jamais d\'offrir des crédits aux autres joueurs. Supplier qu\'on vous donne des crédits est une violation de nos règles de vie en communauté, et toute fois où cela se produit doit être signalée à hello@piloterr.com.</string>
     <string name="gems_gift_description">Vous voulez octroyer un butin scintillant à quelqu\'un d\'autre \?</string>
     <string name="profile_gift_subscription">Offrir
 \nun abonnement</string>
     <string name="profile_gift_gems">Offrir
-\ndes gemmes</string>
+\ndes crédits</string>
     <string name="profile_send_message">Envoyer
 \nun message</string>
-    <string name="gift_gems">Offrir des gemmes</string>
+    <string name="gift_gems">Offrir des crédits</string>
     <string name="see_other_options">Voir les autres options</string>
-    <string name="promo_subscription_buy_gems_description">Abonnez-vous pour acheter des gemmes avec de l\'or,obtenir des objets mystères tous les mois, augmenter le taux de butin et plus encore !</string>
-    <string name="promo_subscription_buy_gems_prompt">Besoin de gemmes \?</string>
+    <string name="promo_subscription_buy_gems_description">Abonnez-vous pour acheter des crédits avec de l\'or,obtenir des objets mystères tous les mois, augmenter le taux de butin et plus encore !</string>
+    <string name="promo_subscription_buy_gems_prompt">Besoin de crédits \?</string>
     <string name="transfer_ownership_confirm_message">Cela fera de %s le nouveau responsable de l\'équipe</string>
-    <string name="gift_confirmation_text_gems">Vous avez envoyé des gemmes à %s.</string>
+    <string name="gift_confirmation_text_gems">Vous avez envoyé des crédits à %s.</string>
     <string name="gift_confirmation_text_sub">Vous avez envoyé à %s un abonnement de %s mois.</string>
     <string name="gift_confirmation_text_sub_g1g1">Vous avez envoyé à %s un abonnement de %s mois et le même abonnement vous a été accordé pour notre promotion Un en cadeau, un reçu !</string>
-    <string name="gift_gems_subtitle">Choisissez le paquet de gemmes que vous voudriez offrir ci-dessous !</string>
+    <string name="gift_gems_subtitle">Choisissez le paquet de crédits que vous voudriez offrir ci-dessous !</string>
     <string name="empty_title_rewards_filtered">Pas de récompense</string>
     <string name="empty_description_todos_filtered">Il n\'y a pas de tâche visible avec vos filtres actuels.</string>
     <string name="empty_title_todos_filtered">Pas de tâches</string>
@@ -929,11 +929,11 @@
     <string name="subscriber_currency">Monnaie d\'abonnement</string>
     <string name="game_mechanics">Mécaniques de jeu</string>
     <string name="common_questions">Questions habituelles</string>
-    <string name="gems_description">Les gemmes sont une monnaie achetée avec de l\'argent, et qui vous permet d\'acheter plus de contenu dans Piloterr et est une principale source de soutient financier pour l\'équipe d\'Piloterr, avec les abonnements.
+    <string name="gems_description">Les crédits sont une monnaie achetée avec de l\'argent, et qui vous permet d\'acheter plus de contenu dans Piloterr et est une principale source de soutient financier pour l\'équipe d\'Piloterr, avec les abonnements.
 \n
-\nTout le contenu acheté avec des gemmes est purement cosmétique ou peut être obtenu gratuitement avec le temps.
+\nTout le contenu acheté avec des crédits est purement cosmétique ou peut être obtenu gratuitement avec le temps.
 \n
-\nVous pouvez aussi recevoir des gemmes offertes par d\'autres personnes, par des récompenses de défi, en contribuant à Piloterr ou en vous abonnant.</string>
+\nVous pouvez aussi recevoir des crédits offertes par d\'autres personnes, par des récompenses de défi, en contribuant à Piloterr ou en vous abonnant.</string>
     <string name="currency">Monnaie</string>
     <string name="premium_currency">Monnaie premium</string>
     <string name="standard">Standard</string>
@@ -956,7 +956,7 @@
 \n
 \n**Gagnez de l\'or** en validant vos tâches ou en réalisant des quêtes, ou avec certaines compétences de classe. Un **attribut de perception** plus élevé augmente l\'or que vous gagnez.
 \n
-\nSi vous vous abonnez à Piloterr, vous pourrez même utiliser l\'or pour acheter un nombre de gemmes déterminé par la durée de votre abonnement.</string>
+\nSi vous vous abonnez à Piloterr, vous pourrez même utiliser l\'or pour acheter un nombre de crédits déterminé par la durée de votre abonnement.</string>
     <string name="mana_points">Points de mana</string>
     <string name="experience_description">Les points d\'expérience représentes vos progrès et vous permettent de monter en niveau. Vous allez **gagner de l\'expérience** surtout en validant des tâches et en réussissant des quêtes, mais il y a également des compétences de classe qui donnent de l\'expérience.
 \n

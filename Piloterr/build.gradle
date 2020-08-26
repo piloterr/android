@@ -160,10 +160,11 @@ android {
         buildConfigField "String", "STORE", "\"google\""
         buildConfigField "String", "TESTING_LEVEL", "\"production\""
         multiDexEnabled true
-        resConfigs "en", "bg", "de", "en-rGB", "es", "fr", "hr-rHR", "in", "it", "iw", "ja", "ko", "lt", "nl", "pl", "pt-rBR", "pt-rPT", "ru", "tr", "zh", "zh-rTW"
+        resConfigs "en", "en-rGB", "fr"
 
-        versionCode 2509
+        versionCode 2512
         versionName "2.8"
+        targetSdkVersion 30
     }
 
     viewBinding {
